@@ -1,2 +1,2 @@
 # VSCodeMemoryManager
-VSCMM-8
+VSCMM-9
