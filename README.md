@@ -1,2 +1,2 @@
 # VSCodeMemoryManager
-VSCMM-6
+VSCMM-7
