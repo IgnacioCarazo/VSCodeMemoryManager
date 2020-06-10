@@ -1,0 +1,3 @@
+**VSCodeMemoryManager**
+
+VSCMM-13
