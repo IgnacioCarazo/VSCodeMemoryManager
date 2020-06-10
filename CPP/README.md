@@ -1,0 +1,3 @@
+**VSCodeMenoryManager**
+
+VSCMM-12
