@@ -36,15 +36,15 @@ function activate(context) {
         else {
             vscode.window.showInformationMessage('El usuario no desea utilizar un servidor remoto');
         }
-        let jsonFile = [
-            { "ID": "1", "value": "44", "type": "int", "address": "00x55", "ref": "7" },
-            { "ID": "1", "value": "44", "type": "int", "address": "00x55", "ref": "7" },
-            { "ID": "1", "value": "44", "type": "int", "address": "00x55", "ref": "7" },
-            { "ID": "1", "value": "44", "type": "int", "address": "00x55", "ref": "7" },
-            { "ID": "1", "value": "44", "type": "int", "address": "00x55", "ref": "7" }
-        ];
+        let jsonFile = { VSPtr: [
+                { "ID": "1", "value": "44", "type": "int", "address": "dsdf", "ref": "7" },
+                { "ID": "1", "value": "44", "type": "int", "address": "sdf", "ref": "7" },
+                { "ID": "1", "value": "44", "type": "int", "address": "sdf", "ref": "7" },
+                { "ID": "1", "value": "44", "type": "int", "address": "sdf", "ref": "7" },
+                { "ID": "1", "value": "44", "type": "int", "address": "sdf", "ref": "7" }
+            ] };
         // json con todos los datos a mostrar en el heapvisualizer
-        const htmlTable = jsonFile.reduce((acc, data) => {
+        const htmlTable = jsonFile.VSPtr.reduce((acc, data) => {
             return `
 				${acc}
 					<tr>
