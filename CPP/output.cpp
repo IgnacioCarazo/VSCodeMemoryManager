@@ -11,10 +11,22 @@
 
 using nlohmann::json;
 using namespace  std;
-// Create a map iterator and point to beginning of map
-json static streamOutput;
+
+json static outputStream;
+
+
+void jsonFile(){
+    int static count{0};
+    string s;
+    s = outputStream.dump();
+    string cadena = "JACKSON" + to_string(count++) + ".json";
+    ofstream FOUT0(cadena);
+    FOUT0 << s << endl;
+}
+
 
 void formatoJson(map<int,struct Info> &referencias){
+
     json stream;
 // Iterate over the map using Iterator till end.
     map<int,struct Info>::iterator it = referencias.begin();
@@ -37,10 +49,10 @@ void formatoJson(map<int,struct Info> &referencias){
         cout << endl << stream.dump(3) << endl;
 
     }
-    streamOutput = stream;
-    //ofstream FOUT("JACKSONN.json");
-    //string s = streamOutput.dump();
-    //FOUT << s << endl;
+    outputStream = stream;
+    jsonFile();
+
+
 }
 
 extern "C" int salida(){
@@ -51,42 +63,75 @@ extern "C" int salida(){
 
     *ptr = 30;
 
-
     VSPtr<double> ptr2 = VSPtr<double >::New();
 
-
     *ptr2 = 67;
-
-    ofstream FOUT0("JACKSON0.json");
-    formatoJson(GarbageCollector::Instancia()->referencias);
-    s = streamOutput.dump();
-    FOUT0 << s << endl;
-
 
     VSPtr<double > ptr3 = VSPtr<double>::New();
     VSPtr<double > ptr4 = VSPtr<double>::New();
 
     ptr3 = ptr2;
 
-
     ptr4 = ptr3;
-
-    ofstream FOUT1("JACKSON1.json");
-    formatoJson(GarbageCollector::Instancia()->referencias);
-    s = streamOutput.dump();
-    FOUT1 << s << endl;
 
     VSPtr<double > ptr5 = VSPtr<double>::New();
     *ptr5 = 99;
 
     ptr3 = ptr5;
 
-    ofstream FOUT2("JACKSON2.json");
-    formatoJson(GarbageCollector::Instancia()->referencias);
-    s = streamOutput.dump();
-    FOUT2 << s << endl;
-
-
     return 0;
 }
+
+/*
+int main() {
+    string s;
+
+    VSPtr<int> ptr1 = VSPtr<int>::New(); //ID: 1
+    *ptr1 = 30;
+
+    VSPtr<int> ptr56 = VSPtr<int>::New();
+    VSPtr<int> ptr54 = VSPtr<int>::New();
+    VSPtr<int> ptr43 = VSPtr<int>::New();
+
+
+
+
+    VSPtr<double> ptr2 = VSPtr<double >::New(); //ID: 2
+
+
+    *ptr2 = 67;
+
+*//*    ofstream FOUT0("JACKSON0.json");
+    formatoJson(GarbageCollector::Instancia()->referencias);
+    s = outputStream.dump();
+    FOUT0 << s << endl;
+    FOUT0.clear();*//*
+
+
+    VSPtr<double > ptr3 = VSPtr<double>::New(); //ID: 3
+    VSPtr<double > ptr4 = VSPtr<double>::New(); //ID: 4
+
+    ptr3 = ptr2; //ID: 3 y //ID2 Sobrecarga de '='
+
+    ptr4 = ptr3;
+
+
+*//*    ofstream FOUT1("JACKSON1.json");
+    formatoJson(GarbageCollector::Instancia()->referencias);
+    s = outputStream.dump();
+    FOUT1 << s << endl;*//*
+
+
+    VSPtr<double > ptr5 = VSPtr<double>::New();
+    *ptr5 = 99;
+
+    ptr3 = ptr5;
+
+*//*    ofstream FOUT2("JACKSON2.json");
+    formatoJson(GarbageCollector::Instancia()->referencias);
+    s = outputStream.dump();
+    FOUT2 << s << endl;*//*
+
+    return 0;
+}*/
 

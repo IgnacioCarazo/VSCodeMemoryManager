@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/Ejecutable.dir/GarbageCollector.cpp.o CMakeFiles/Ejecutable.dir/main.cpp.o  -o Ejecutable 
+/usr/bin/c++  -g   CMakeFiles/Ejecutable.dir/GarbageCollector.cpp.o  -o Ejecutable 
