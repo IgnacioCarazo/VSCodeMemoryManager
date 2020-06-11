@@ -39,7 +39,7 @@ void formatoJson(map<int,struct Info> &referencias){
     streamOutput = stream;
 }
 
-extern "C" string salida(){
+extern "C" const char* salida(){
     VSPtr<int> ptr = VSPtr<int>::New();
 
     *ptr = 30;
@@ -61,7 +61,8 @@ extern "C" string salida(){
     *ptr5 = 99;
 
     ptr3 = ptr5;
-
-    return streamOutput.dump();
+    string s = streamOutput.dump();
+    const char * c =  s.c_str();
+    return c;
 }
 
