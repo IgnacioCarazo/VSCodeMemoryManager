@@ -553,6 +553,8 @@ iostream
 /home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/VSPtr.h
 iostream
 -
+sstream
+-
 GarbageCollector.h
 /home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/GarbageCollector.h
 

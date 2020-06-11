@@ -37,11 +37,11 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="CPP">
-				<Option output="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/libCPP.so" prefix_auto="0" extension_auto="0"/>
+			<Target title="Ejecutable">
+				<Option output="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/Ejecutable" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug"/>
 				<Option object_output="./"/>
-				<Option type="3"/>
+				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/CPP"/>
@@ -57,17 +57,17 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 CPP"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 Ejecutable"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="CPP/fast">
-				<Option output="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/libCPP.so" prefix_auto="0" extension_auto="0"/>
+			<Target title="Ejecutable/fast">
+				<Option output="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/Ejecutable" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug"/>
 				<Option object_output="./"/>
-				<Option type="3"/>
+				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/CPP"/>
@@ -83,24 +83,21 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 CPP/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 Ejecutable/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP">
-			<Option target="CPP"/>
-		</Unit>
 		<Unit filename="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/GarbageCollector.cpp">
-			<Option target="CPP"/>
+			<Option target="Ejecutable"/>
 		</Unit>
 		<Unit filename="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/GarbageCollector.h">
-			<Option target="CPP"/>
+			<Option target="Ejecutable"/>
 		</Unit>
 		<Unit filename="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/VSPtr.h">
-			<Option target="CPP"/>
+			<Option target="Ejecutable"/>
 		</Unit>
 		<Unit filename="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

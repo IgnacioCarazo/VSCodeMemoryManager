@@ -82,7 +82,7 @@ extern "C" int salida(){
     return 0;
 }
 
-/*
+
 int main() {
     string s;
 
@@ -101,11 +101,11 @@ int main() {
 
     *ptr2 = 67;
 
-*//*    ofstream FOUT0("JACKSON0.json");
+/*    ofstream FOUT0("JACKSON0.json");
     formatoJson(GarbageCollector::Instancia()->referencias);
     s = outputStream.dump();
     FOUT0 << s << endl;
-    FOUT0.clear();*//*
+    FOUT0.clear();*/
 
 
     VSPtr<double > ptr3 = VSPtr<double>::New(); //ID: 3
@@ -116,10 +116,10 @@ int main() {
     ptr4 = ptr3;
 
 
-*//*    ofstream FOUT1("JACKSON1.json");
+/*    ofstream FOUT1("JACKSON1.json");
     formatoJson(GarbageCollector::Instancia()->referencias);
     s = outputStream.dump();
-    FOUT1 << s << endl;*//*
+    FOUT1 << s << endl;*/
 
 
     VSPtr<double > ptr5 = VSPtr<double>::New();
@@ -127,11 +127,11 @@ int main() {
 
     ptr3 = ptr5;
 
-*//*    ofstream FOUT2("JACKSON2.json");
+/*    ofstream FOUT2("JACKSON2.json");
     formatoJson(GarbageCollector::Instancia()->referencias);
     s = outputStream.dump();
-    FOUT2 << s << endl;*//*
+    FOUT2 << s << endl;*/
 
     return 0;
-}*/
+}
 

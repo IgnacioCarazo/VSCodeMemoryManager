@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <sstream>
 #include "GarbageCollector.h"
 using namespace std;
 
@@ -32,9 +33,22 @@ public:
     {
         struct Info ptrData;
         ptrData.size = sizeof(T);
-        ptrData.address = "Por definirse el address"; //Use a ptr y fallo
-        ptrData.type = "Por definir";
+
+        std::ostringstream address;
+        address << (void const *)ptr;
+        ptrData.address = address.str();; //Use a ptr y fallo
         ptrData.ref = 1;
+
+        if(sizeof(T)==1){
+            ptrData.type = "char";
+        }else if(sizeof(T)==4){
+            ptrData.type = "int";
+        }else if(sizeof(T)==8){
+            ptrData.type = "double";
+        }else{
+            ptrData.type = "N.D";
+        }
+
         ID = GarbageCollector::Instancia()->addPointer(ptrData);
         cout << "---------------------¡'------------------------------" << endl;
         cout << "------Ejecucion del constructor---------" << endl;
