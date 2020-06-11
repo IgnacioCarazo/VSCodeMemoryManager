@@ -13,22 +13,28 @@ using namespace  std;
 // Create a map iterator and point to beginning of map
 json static streamOutput;
 
-void formatoJson(map<int,int> &referencias){
+void formatoJson(map<int,struct Info> &referencias){
     json stream;
 // Iterate over the map using Iterator till end.
-    map<int, int>::iterator it = referencias.begin();
+    map<int,struct Info>::iterator it = referencias.begin();
     while (it != referencias.end())
     {
         int keyWord = it->first; // Accessing KEY from element pointed by it.
-        int suscrip = it->second; // Accessing VALUE from element pointed by it.
         json j;
+
         j["id"] = keyWord;
-        j["ref"] = suscrip;
+        j["size"] = (it->second).size;
+        j["address"] = (it->second).address;
+        j["type"] = (it->second).type;
+        j["ref"] = (it->second).ref;
+
         stream.push_back(j);
+
+
+        it++; // Increment the Iterator to point to next entry
 
         cout << endl << stream.dump(3) << endl;
 
-        it++; // Increment the Iterator to point to next entry
     }
     streamOutput = stream;
 }

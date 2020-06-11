@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libCPP.so -o libCPP.so CMakeFiles/CPP.dir/GarbageCollector.cpp.o 

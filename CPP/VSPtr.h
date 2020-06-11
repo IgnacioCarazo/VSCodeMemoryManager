@@ -9,6 +9,16 @@ using namespace std;
 #ifndef CPP_VSPTR_H
 #define CPP_VSPTR_H
 
+struct Info{
+
+    int ID;
+    string type;
+    string address;
+    int size;
+    int ref;
+
+};
+
 template <class T>
 class VSPtr{
     T *ptr;
@@ -17,9 +27,16 @@ class VSPtr{
 public:
 
 
-    VSPtr(): ID{0}, ptr{new T}{
-        ID = GarbageCollector::Instancia()->addReferencia();
-        cout << "---------------------------------------------------" << endl;
+    VSPtr()
+    :ID{0}, ptr{new T}
+    {
+        struct Info ptrData;
+        ptrData.size = sizeof(T);
+        ptrData.address = "Por definirse el address"; //Use a ptr y fallo
+        ptrData.type = "Por definir";
+        ptrData.ref = 1;
+        ID = GarbageCollector::Instancia()->addPointer(ptrData);
+        cout << "---------------------¡'------------------------------" << endl;
         cout << "------Ejecucion del constructor---------" << endl;
         cout << "ID del objeto: " << ID << endl;
         cout << "Espacio de la memoria reservado: " << ptr <<  endl;
@@ -31,8 +48,6 @@ public:
         return VSPtr();
     }
 
-
-
     T& operator*(){
         cout << "---------------------------------------------------" << endl;
         cout << "----------------Sobrecarga de '*'---------------" << endl;
@@ -42,29 +57,30 @@ public:
         return *ptr;
     }
 
-
+/*
     void operator=(T val) {
         cout << "---------------------------------------------------" << endl;
         cout << "----------------Sobrecarga de '='---------------" << endl;
         cout << "Operador de asignacion(numerica) ejecutado" << endl;
         cout << "---------------------------------------------------" << endl;
         *ptr = val;
-    }
+    }*/
 
 
-    VSPtr& operator=(const VSPtr& objeto_a_Copiar){
+    VSPtr& operator=(const VSPtr& objectToCopy){
         cout << "---------------------------------------------------" << endl;
         cout << "----------------Sobrecarga de '='---------------" << endl;
-        int viejoID {this->ID};
-        int numVarApuntando {GarbageCollector::Instancia()->eliminarReferencia(viejoID)};
+        int actualID {this->ID};
+        int numVariablesApuntando
+        {GarbageCollector::Instancia()->deletePointer(actualID)};
         cout << "Operador de asignacion(de un objeto) ejecutada" << endl;
-        if(numVarApuntando==1){
+        if(numVariablesApuntando == 1){
             cout << "Liberando espacio en la direccion de memoria: " << this->ptr << endl;
             delete this->ptr;
         }
-        GarbageCollector::Instancia()->cambiarReferencia(objeto_a_Copiar.ID);
-        this->ptr = objeto_a_Copiar.ptr;
-        this->ID = objeto_a_Copiar.ID;
+        GarbageCollector::Instancia()->changePointer(objectToCopy.ID);
+        this->ptr = objectToCopy.ptr;
+        this->ID = objectToCopy.ID;
         cout << "Asignando la nueva direccion de memoria: " << this->ptr << endl;
         cout << "---------------------------------------------------" << endl;
 
@@ -82,7 +98,7 @@ public:
 
 
     virtual ~VSPtr() {
-        int numVarApuntando{GarbageCollector::Instancia()->eliminarReferencia(ID)};
+        int numVarApuntando{GarbageCollector::Instancia()->deletePointer(ID)};
         if(numVarApuntando==1){
             cout << "---------------------------------------------------" << endl;
 

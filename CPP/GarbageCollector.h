@@ -8,7 +8,6 @@ using namespace std;
 #ifndef CPP_GARBAGECOLLECTOR_H
 #define CPP_GARBAGECOLLECTOR_H
 
-
 class GarbageCollector {
 private:
     static GarbageCollector* garbageCollector;
@@ -17,18 +16,18 @@ private:
 
 public:
     //Atributos
-    map<int,int> referencias;
+    map<int,struct Info> referencias;
     static int asignador;
 
 
     static GarbageCollector* Instancia();
 
 
-    int addReferencia();
+    int addPointer(struct Info &infoPtr);
 
-    void cambiarReferencia(int nuevoID);
+    void changePointer(int newID);
 
-    int eliminarReferencia(int antiguoID);
+    int deletePointer(int oldID);
 
 
 };

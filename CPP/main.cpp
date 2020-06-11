@@ -3,52 +3,28 @@
 //
 
 #include "VSPtr.h"
+#include "nlohmann/json.hpp"
+using namespace std;
+
+
 
 int main() {
 
+    VSPtr<int> ptr1 = VSPtr<int>::New(); //ID: 1
 
-    VSPtr<int> ptr = VSPtr<int>::New();
-/*    cout << "Direccion asignada para la variable 'ptr' tipo 'MiPuntero': " << &ptr << endl;
-    cout << "Direccion en el heap hacia donde apunta la variable 'ptr' tipo 'MiPuntero': " << ptr.ptr << endl;
-    cout << "El dato almacenado en el heap dentro de la direccion: " << ptr.ptr << " es: " << *(ptr.ptr) << endl << endl;
-
-    cout << "Cambiando el dato almacenado dentro del heap por 10... " << endl;
-    *(ptr.ptr) = 10;
-
-    cout << "El dato almacenado en el heap dentro de la direccion: " << ptr.ptr << " es: " << *(ptr.ptr) << endl << endl;*/
-
-    *ptr = 30;
+    *ptr1 = 30;
 
 
-    VSPtr<double> ptr2 = VSPtr<double >::New();
+    VSPtr<double> ptr2 = VSPtr<double >::New(); //ID: 2
 
-
-/*    cout << "Direccion asignada para la variable 'ptr2' tipo 'MiPuntero': " << &ptr2 << endl;
-    cout << "Direccion en el heap hacia donde apunta la variable 'ptr' tipo 'MiPuntero': " << ptr2.ptr << endl;
-    cout << "El dato almacenado en el heap dentro de la direccion: " << ptr2.ptr << " es: " << *(ptr2.ptr) << endl << endl;
-
-    cout << "Cambiando el dato almacenado dentro del heap por 20... " << endl;
-
-    *(ptr2.ptr) = 20;
-
-    cout << "El dato almacenado en el heap dentro de la direccion: " << ptr2.ptr << " es: " << *(ptr2.ptr) << endl << endl;
-
-    cout << "Cambiando el dato almacenado dentro del heap por 60... " << endl;
-    ptr2.setVal(60);
-    cout << "El dato almacenado en el heap dentro de la direccion: " << ptr2.ptr << " es: " << *(ptr2.ptr) << endl << endl;*/
 
     *ptr2 = 67;
 
-    //cout << *ptr2 << endl;
 
-    //ptr2 = 83;
-    //cout << *ptr2 << endl;
+    VSPtr<double > ptr3 = VSPtr<double>::New(); //ID: 3
+    VSPtr<double > ptr4 = VSPtr<double>::New(); //ID: 4
 
-    VSPtr<double > ptr3 = VSPtr<double>::New();
-    VSPtr<double > ptr4 = VSPtr<double>::New();
-
-    //Por ahora, hace que ocurra un "error" cuando se libera dos veces la misma direccion de memoria
-    ptr3 = ptr2;
+    ptr3 = ptr2; //ID: 3 y //ID2 Sobrecarga de '='
 
     ptr4 = ptr3;
 
@@ -56,12 +32,6 @@ int main() {
     *ptr5 = 99;
 
     ptr3 = ptr5;
-
-
-
-    //double num = &ptr2;
-    //cout << "Numero: " << num << endl;
-
 
     return 0;
 }
