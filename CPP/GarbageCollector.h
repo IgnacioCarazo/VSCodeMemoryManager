@@ -18,7 +18,7 @@ private:
 public:
     //Atributos
     map<int,int> referencias;
-    static int asisgnadorID;
+    static int asignador;
 
 
     static GarbageCollector* Instancia();

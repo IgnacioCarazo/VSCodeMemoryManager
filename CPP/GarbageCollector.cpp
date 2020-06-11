@@ -5,10 +5,11 @@
 #include <map>
 #include <iostream>
 #include "GarbageCollector.h"
+#include "output.cpp"
 
 using namespace std;
 
-int GarbageCollector::asisgnadorID{0};
+int GarbageCollector::asignador{0};
 GarbageCollector* GarbageCollector::garbageCollector{nullptr};
 
 GarbageCollector::GarbageCollector(){
@@ -23,21 +24,27 @@ GarbageCollector* GarbageCollector::Instancia(){
 }
 
 int GarbageCollector::addReferencia(){
-    int idTemp = ++asisgnadorID;
+    int idTemp = ++asignador;
     referencias.insert(pair<int,int>(idTemp,1));
+    formatoJson(referencias);
     return idTemp;
 }
 
 void GarbageCollector::cambiarReferencia(int nuevoID){
     ++referencias.at(nuevoID);
+    formatoJson(referencias);
 }
 
 int GarbageCollector::eliminarReferencia(int antiguoID){
     int numVarApuntando = referencias.at(antiguoID);
     if(numVarApuntando == 1){
         referencias.erase(antiguoID);
+        formatoJson(referencias);
         return numVarApuntando;
     }else{
-        return referencias.at(antiguoID)--;
+        int num = referencias.at(antiguoID)--;
+        formatoJson(referencias);
+        return num;
     }
+
 }
