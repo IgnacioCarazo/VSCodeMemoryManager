@@ -6,6 +6,7 @@
 #include "nlohmann/json.hpp"
 #include <iostream>
 #include "VSPtr.h"
+#include <fstream>
 
 
 using nlohmann::json;
@@ -37,10 +38,16 @@ void formatoJson(map<int,struct Info> &referencias){
 
     }
     streamOutput = stream;
+    //ofstream FOUT("JACKSONN.json");
+    //string s = streamOutput.dump();
+    //FOUT << s << endl;
 }
 
-extern "C" const char* salida(){
+extern "C" int salida(){
+    string s;
+
     VSPtr<int> ptr = VSPtr<int>::New();
+
 
     *ptr = 30;
 
@@ -50,19 +57,36 @@ extern "C" const char* salida(){
 
     *ptr2 = 67;
 
+    ofstream FOUT0("JACKSON0.json");
+    formatoJson(GarbageCollector::Instancia()->referencias);
+    s = streamOutput.dump();
+    FOUT0 << s << endl;
+
+
     VSPtr<double > ptr3 = VSPtr<double>::New();
     VSPtr<double > ptr4 = VSPtr<double>::New();
 
     ptr3 = ptr2;
 
+
     ptr4 = ptr3;
+
+    ofstream FOUT1("JACKSON1.json");
+    formatoJson(GarbageCollector::Instancia()->referencias);
+    s = streamOutput.dump();
+    FOUT1 << s << endl;
 
     VSPtr<double > ptr5 = VSPtr<double>::New();
     *ptr5 = 99;
 
     ptr3 = ptr5;
-    string s = streamOutput.dump();
-    const char * c =  s.c_str();
-    return c;
+
+    ofstream FOUT2("JACKSON2.json");
+    formatoJson(GarbageCollector::Instancia()->referencias);
+    s = streamOutput.dump();
+    FOUT2 << s << endl;
+
+
+    return 0;
 }
 

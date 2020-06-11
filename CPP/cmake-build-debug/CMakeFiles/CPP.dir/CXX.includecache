@@ -645,4 +645,6 @@ iostream
 -
 VSPtr.h
 /home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/VSPtr.h
+fstream
+-
 

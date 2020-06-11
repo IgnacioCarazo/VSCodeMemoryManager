@@ -3,12 +3,17 @@
 //
 
 #include "VSPtr.h"
+#include <fstream>
 #include "nlohmann/json.hpp"
+#include "output.cpp"
+
 using namespace std;
 
 
 
 int main() {
+    string s;
+
 
     VSPtr<int> ptr1 = VSPtr<int>::New(); //ID: 1
 
@@ -20,6 +25,11 @@ int main() {
 
     *ptr2 = 67;
 
+    ofstream FOUT0("JACKSON0.json");
+    formatoJson(GarbageCollector::Instancia()->referencias);
+    s = streamOutput.dump();
+    FOUT0 << s << endl;
+
 
     VSPtr<double > ptr3 = VSPtr<double>::New(); //ID: 3
     VSPtr<double > ptr4 = VSPtr<double>::New(); //ID: 4
@@ -28,10 +38,25 @@ int main() {
 
     ptr4 = ptr3;
 
+    ofstream FOUT1("JACKSON1.json");
+    formatoJson(GarbageCollector::Instancia()->referencias);
+    s = streamOutput.dump();
+    FOUT1 << s << endl;
+
+
+
+
     VSPtr<double > ptr5 = VSPtr<double>::New();
     *ptr5 = 99;
 
     ptr3 = ptr5;
+
+    ofstream FOUT2("JACKSON2.json");
+    formatoJson(GarbageCollector::Instancia()->referencias);
+    s = streamOutput.dump();
+    FOUT2 << s << endl;
+
+
 
     return 0;
 }
