@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Ejecutable
+# Target rules for targets named CPP
 
 # Build rule for target.
-Ejecutable: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Ejecutable
-.PHONY : Ejecutable
+CPP: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CPP
+.PHONY : CPP
 
 # fast build rule for target.
-Ejecutable/fast:
-	$(MAKE) -f CMakeFiles/Ejecutable.dir/build.make CMakeFiles/Ejecutable.dir/build
-.PHONY : Ejecutable/fast
+CPP/fast:
+	$(MAKE) -f CMakeFiles/CPP.dir/build.make CMakeFiles/CPP.dir/build
+.PHONY : CPP/fast
 
 GarbageCollector.o: GarbageCollector.cpp.o
 
@@ -129,7 +129,7 @@ GarbageCollector.o: GarbageCollector.cpp.o
 
 # target to build an object file
 GarbageCollector.cpp.o:
-	$(MAKE) -f CMakeFiles/Ejecutable.dir/build.make CMakeFiles/Ejecutable.dir/GarbageCollector.cpp.o
+	$(MAKE) -f CMakeFiles/CPP.dir/build.make CMakeFiles/CPP.dir/GarbageCollector.cpp.o
 .PHONY : GarbageCollector.cpp.o
 
 GarbageCollector.i: GarbageCollector.cpp.i
@@ -138,7 +138,7 @@ GarbageCollector.i: GarbageCollector.cpp.i
 
 # target to preprocess a source file
 GarbageCollector.cpp.i:
-	$(MAKE) -f CMakeFiles/Ejecutable.dir/build.make CMakeFiles/Ejecutable.dir/GarbageCollector.cpp.i
+	$(MAKE) -f CMakeFiles/CPP.dir/build.make CMakeFiles/CPP.dir/GarbageCollector.cpp.i
 .PHONY : GarbageCollector.cpp.i
 
 GarbageCollector.s: GarbageCollector.cpp.s
@@ -147,7 +147,7 @@ GarbageCollector.s: GarbageCollector.cpp.s
 
 # target to generate assembly for a file
 GarbageCollector.cpp.s:
-	$(MAKE) -f CMakeFiles/Ejecutable.dir/build.make CMakeFiles/Ejecutable.dir/GarbageCollector.cpp.s
+	$(MAKE) -f CMakeFiles/CPP.dir/build.make CMakeFiles/CPP.dir/GarbageCollector.cpp.s
 .PHONY : GarbageCollector.cpp.s
 
 # Help Target
@@ -158,7 +158,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Ejecutable"
+	@echo "... CPP"
 	@echo "... GarbageCollector.o"
 	@echo "... GarbageCollector.i"
 	@echo "... GarbageCollector.s"

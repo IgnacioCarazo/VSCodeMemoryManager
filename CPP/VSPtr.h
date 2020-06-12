@@ -45,8 +45,8 @@ public:
             ptrData.type = "int";
         }else if(sizeof(T)==8){
             ptrData.type = "double";
-        }else{
-            ptrData.type = "N.D";
+        }else if(sizeof(T)==32){
+            ptrData.type = "string";
         }
 
         ID = GarbageCollector::Instancia()->addPointer(ptrData);

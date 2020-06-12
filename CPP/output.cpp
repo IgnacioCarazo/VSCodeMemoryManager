@@ -64,8 +64,9 @@ extern "C" int salida(){
     *ptr = 30;
 
     VSPtr<double> ptr2 = VSPtr<double >::New();
+    VSPtr<string> ptr60 = VSPtr<string>::New(); //ID: 3
 
-    *ptr2 = 67;
+    *ptr2 = 67.5;
 
     VSPtr<double > ptr3 = VSPtr<double>::New();
     VSPtr<double > ptr4 = VSPtr<double>::New();
@@ -75,12 +76,13 @@ extern "C" int salida(){
     ptr4 = ptr3;
 
     VSPtr<double > ptr5 = VSPtr<double>::New();
-    *ptr5 = 99;
+    *ptr5 = 99.7;
 
     ptr3 = ptr5;
 
     return 0;
 }
+/*
 
 
 int main() {
@@ -89,9 +91,13 @@ int main() {
     VSPtr<int> ptr1 = VSPtr<int>::New(); //ID: 1
     *ptr1 = 30;
 
+*/
+/*
     VSPtr<int> ptr56 = VSPtr<int>::New();
     VSPtr<int> ptr54 = VSPtr<int>::New();
     VSPtr<int> ptr43 = VSPtr<int>::New();
+*//*
+
 
 
 
@@ -99,13 +105,17 @@ int main() {
     VSPtr<double> ptr2 = VSPtr<double >::New(); //ID: 2
 
 
-    *ptr2 = 67;
+    *ptr2 = 67.5;
 
+*/
 /*    ofstream FOUT0("JACKSON0.json");
     formatoJson(GarbageCollector::Instancia()->referencias);
     s = outputStream.dump();
     FOUT0 << s << endl;
-    FOUT0.clear();*/
+    FOUT0.clear();*//*
+
+
+    VSPtr<string> ptr60 = VSPtr<string>::New(); //ID: 3
 
 
     VSPtr<double > ptr3 = VSPtr<double>::New(); //ID: 3
@@ -116,22 +126,27 @@ int main() {
     ptr4 = ptr3;
 
 
+*/
 /*    ofstream FOUT1("JACKSON1.json");
     formatoJson(GarbageCollector::Instancia()->referencias);
     s = outputStream.dump();
-    FOUT1 << s << endl;*/
+    FOUT1 << s << endl;*//*
+
 
 
     VSPtr<double > ptr5 = VSPtr<double>::New();
-    *ptr5 = 99;
+    *ptr5 = 99.6;
 
     ptr3 = ptr5;
 
+*/
 /*    ofstream FOUT2("JACKSON2.json");
     formatoJson(GarbageCollector::Instancia()->referencias);
     s = outputStream.dump();
-    FOUT2 << s << endl;*/
+    FOUT2 << s << endl;*//*
+
 
     return 0;
 }
+*/
 

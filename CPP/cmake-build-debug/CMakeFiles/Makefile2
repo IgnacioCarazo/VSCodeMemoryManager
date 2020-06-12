@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Ejecutable.dir/all
+all: CMakeFiles/CPP.dir/all
 
 .PHONY : all
 
@@ -63,36 +63,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Ejecutable.dir/clean
+clean: CMakeFiles/CPP.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Ejecutable.dir
+# Target rules for target CMakeFiles/CPP.dir
 
 # All Build rule for target.
-CMakeFiles/Ejecutable.dir/all:
-	$(MAKE) -f CMakeFiles/Ejecutable.dir/build.make CMakeFiles/Ejecutable.dir/depend
-	$(MAKE) -f CMakeFiles/Ejecutable.dir/build.make CMakeFiles/Ejecutable.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Ejecutable"
-.PHONY : CMakeFiles/Ejecutable.dir/all
+CMakeFiles/CPP.dir/all:
+	$(MAKE) -f CMakeFiles/CPP.dir/build.make CMakeFiles/CPP.dir/depend
+	$(MAKE) -f CMakeFiles/CPP.dir/build.make CMakeFiles/CPP.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target CPP"
+.PHONY : CMakeFiles/CPP.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Ejecutable.dir/rule: cmake_check_build_system
+CMakeFiles/CPP.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Ejecutable.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/CPP.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/Ejecutable.dir/rule
+.PHONY : CMakeFiles/CPP.dir/rule
 
 # Convenience name for target.
-Ejecutable: CMakeFiles/Ejecutable.dir/rule
+CPP: CMakeFiles/CPP.dir/rule
 
-.PHONY : Ejecutable
+.PHONY : CPP
 
 # clean rule for target.
-CMakeFiles/Ejecutable.dir/clean:
-	$(MAKE) -f CMakeFiles/Ejecutable.dir/build.make CMakeFiles/Ejecutable.dir/clean
-.PHONY : CMakeFiles/Ejecutable.dir/clean
+CMakeFiles/CPP.dir/clean:
+	$(MAKE) -f CMakeFiles/CPP.dir/build.make CMakeFiles/CPP.dir/clean
+.PHONY : CMakeFiles/CPP.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
