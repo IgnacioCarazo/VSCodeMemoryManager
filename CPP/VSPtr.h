@@ -15,7 +15,7 @@ struct Info{
     int ID;
     string type;
     string address;
-    int size;
+    string size;
     int ref;
 
 };
@@ -40,12 +40,16 @@ public:
         ptrData.ref = 1;
 
         if(sizeof(T)==1){
+            ptrData.size = "";
             ptrData.type = "char";
         }else if(sizeof(T)==4){
+            ptrData.size = "0";
             ptrData.type = "int";
         }else if(sizeof(T)==8){
+            ptrData.size = "0.0";
             ptrData.type = "double";
         }else if(sizeof(T)==32){
+            ptrData.size = "";
             ptrData.type = "string";
         }
 
@@ -61,7 +65,6 @@ public:
     static VSPtr New(){
         return VSPtr();
     }
-
     T& operator*(){
         cout << "---------------------------------------------------" << endl;
         cout << "----------------Sobrecarga de '*'---------------" << endl;
@@ -71,14 +74,15 @@ public:
         return *ptr;
     }
 
-/*
+
+
     void operator=(T val) {
         cout << "---------------------------------------------------" << endl;
         cout << "----------------Sobrecarga de '='---------------" << endl;
         cout << "Operador de asignacion(numerica) ejecutado" << endl;
         cout << "---------------------------------------------------" << endl;
         *ptr = val;
-    }*/
+    }
 
 
     VSPtr& operator=(const VSPtr& objectToCopy){
