@@ -102,9 +102,14 @@ export function activate(context: vscode.ExtensionContext) {
 		let jsonFile16 = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../JACKSON15.json'), 'utf8')) ;
 		let jsonFile17 = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../JACKSON16.json'), 'utf8')) ;
 		let jsonFile18 = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../JACKSON17.json'), 'utf8')) ;
+		let jsonFile19 = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../JACKSON18.json'), 'utf8')) ;
+		let jsonFile20 = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../JACKSON19.json'), 'utf8')) ;
+		let jsonFile21 = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../JACKSON20.json'), 'utf8')) ;
+
+
 		
 		var jsonFiles = [jsonFile1,jsonFile2,jsonFile3,jsonFile4,jsonFile5,jsonFile6,jsonFile7,jsonFile8,jsonFile9,jsonFile10,
-			jsonFile11,jsonFile12,jsonFile13,jsonFile14,jsonFile15,jsonFile16,jsonFile17,jsonFile18];
+			jsonFile11,jsonFile12,jsonFile13,jsonFile14,jsonFile15,jsonFile16,jsonFile17,jsonFile18,jsonFile19,jsonFile20,jsonFile21];
 
 		// Input "booleano" donde el usuario decide si usar o no un servidor remoto
 		const result = await vscode.window.showQuickPick(['Si','No'],
