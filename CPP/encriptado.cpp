@@ -6,9 +6,13 @@
 #include "md5.cpp"
 
 
-
-const char* encriptarMD5(const char* password){
-    std::string passString = password;
-    std::string stringEncriptado = md5(passString);
-    return stringEncriptado.c_str();
+const char* encriptarMD5(std::string string){
+    const char* s = string.c_str();
+    return s;
 }
+
+std::string encriptar(const char* password){
+    std::string s = md5(password);
+    return s;
+}
+
