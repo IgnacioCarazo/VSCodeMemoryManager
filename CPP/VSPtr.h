@@ -5,6 +5,7 @@
 #include <iostream>
 #include <sstream>
 #include "GarbageCollector.h"
+
 using namespace std;
 
 #ifndef CPP_VSPTR_H
@@ -65,6 +66,7 @@ public:
     static VSPtr New(){
         return VSPtr();
     }
+/*
     T& operator*(){
         cout << "---------------------------------------------------" << endl;
         cout << "----------------Sobrecarga de '*'---------------" << endl;
@@ -73,6 +75,7 @@ public:
 
         return *ptr;
     }
+*/
 
 
 
@@ -81,6 +84,8 @@ public:
         cout << "----------------Sobrecarga de '='---------------" << endl;
         cout << "Operador de asignacion(numerica) ejecutado" << endl;
         cout << "---------------------------------------------------" << endl;
+        (GarbageCollector::Instancia()->referencias).at(ID).size = to_string(val);
+        GarbageCollector::Instancia()->updateJSON();
         *ptr = val;
     }
 

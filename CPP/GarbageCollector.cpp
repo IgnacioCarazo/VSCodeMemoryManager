@@ -26,25 +26,31 @@ GarbageCollector* GarbageCollector::Instancia(){
 int GarbageCollector::addPointer(struct Info &infoPtr){ //Ejecutado al construir
     infoPtr.ID = ++asignador;
     referencias.insert(pair<int,struct Info>(infoPtr.ID,infoPtr));
-    formatoJson(referencias);
+    updateJSON();
     return infoPtr.ID;
 }
 
 void GarbageCollector::changePointer(int newID){
     ++(referencias.at(newID)).ref;
-    formatoJson(referencias);
+    updateJSON();
 }
 
 int GarbageCollector::deletePointer(int oldID){
     int numVarPointing = (referencias.at(oldID)).ref;
     if(numVarPointing == 1){
         referencias.erase(oldID);
-        formatoJson(referencias);
+        updateJSON();
         return numVarPointing;
     }else{
         int num = (referencias.at(oldID)).ref--;
-        formatoJson(referencias);
+        updateJSON();
         return num;
     }
+
+
+}
+
+void GarbageCollector::updateJSON() {
+    formatoJson(referencias);
 
 }

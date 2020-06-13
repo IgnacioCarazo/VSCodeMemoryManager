@@ -29,6 +29,8 @@ public:
 
     int deletePointer(int oldID);
 
+    void updateJSON();
+
 
 };
 #endif //CPP_GARBAGECOLLECTOR_H
