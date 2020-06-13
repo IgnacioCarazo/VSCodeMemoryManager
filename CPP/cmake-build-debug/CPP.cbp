@@ -102,6 +102,15 @@
 		<Unit filename="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/VSPtr.h">
 			<Option target="CPP"/>
 		</Unit>
+		<Unit filename="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/encriptado.cpp">
+			<Option target="CPP"/>
+		</Unit>
+		<Unit filename="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/md5.cpp">
+			<Option target="CPP"/>
+		</Unit>
+		<Unit filename="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/md5.h">
+			<Option target="CPP"/>
+		</Unit>
 		<Unit filename="/home/cubero2112/Desktop/Datos/VSCodeMemoryManager/CPP/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
